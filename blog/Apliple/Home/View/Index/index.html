@@ -1,0 +1,127 @@
+<include file="Public:top" />
+<style>
+    .article-abstract{
+        width:460px;
+        border:1px #ddd;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</style>
+<!-- 主体（一般只改变这里的内容） -->
+
+    <!-- canvas -->
+    <canvas id="canvas-banner" style="background: #393D49;"></canvas>
+    <!--为了及时效果需要立即设置canvas宽高，否则就在home.js中设置-->
+    <script type="text/javascript">
+        var canvas = document.getElementById('canvas-banner');
+        canvas.width = window.document.body.clientWidth - 10;//减去滚动条的宽度
+        if (screen.width >= 992) {
+            canvas.height = window.innerHeight * 1 / 3;
+        } else {
+            canvas.height = window.innerHeight * 2 / 7;
+        }
+    </script>
+    <!-- 这个一般才是真正的主体内容 -->
+    <div class="blog-container">
+        <div class="blog-main">
+
+            <!--左边文章列表-->
+            <div class="blog-main-left">
+                <foreach name="articleList" item="v">
+                <div class="article shadow">
+                    <div class="article-left">
+                        <img src="__PUBLIC__/{$v.article_img}"  style="width: 100px;height: 100px;" alt="" />
+                    </div>
+                    <div class="article-right">
+                        <div class="article-title">
+                            <a href="{:U('Article/show')}?id={$v.article_id}&name={$v.article_title}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$v.article_title}</a>
+                        </div>
+                        <div class="article-abstract">
+                         {$v.article_content}
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="article-footer">
+                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;{$v.add_time|date='Y-m-d H:i:s',###}</span>
+                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;{$v.article_author}</span>
+                        <foreach name="v['art_label']" item="n">
+                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">{$n.label_name}</a></span>
+                        </foreach>
+                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;{$v.like_hits} </span>
+                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;{$v.article_start}</span>
+                    </div>
+                </div>
+                </foreach>
+            </div>
+            <!--右边小栏目-->
+            <div class="blog-main-right">
+                <div class="blogerinfo shadow">
+                    <!-- <div class="blogerinfo-figure">
+                        <img src="__PUBLIC__/Home/images/" alt="Absolutely" style="width: 120px;height: 120px" />
+                    </div> -->
+                    <p class="blogerinfo-nickname">李 鑫</p>
+                    <p class="blogerinfo-introduce">一个丑逼</p>
+                    <p class="blogerinfo-location"><i class="fa fa-location-arrow"></i>&nbsp;山西 - 运城</p>
+                    <hr />
+                    <div class="blogerinfo-contact">
+                        <a target="_blank" title="QQ交流" href="javascript:layer.msg('启动QQ会话窗口')"><i class="fa fa-qq fa-2x"></i></a>
+                        <a target="_blank" title="给我写信" href="javascript:layer.msg('启动邮我窗口')"><i class="fa fa-envelope fa-2x"></i></a>
+                        <a target="_blank" title="新浪微博" href="javascript:layer.msg('转到你的微博主页')"><i class="fa fa-weibo fa-2x"></i></a>
+                        <a target="_blank" title="码云" href="javascript:layer.msg('转到你的github主页')"><i class="fa fa-git fa-2x"></i></a>
+                    </div>
+                </div>
+                <div></div><!--占位-->
+                <div class="blog-module shadow">
+                    <div class="blog-module-title">热文排行</div>
+                    <ul class="fa-ul blog-module-ul">
+                        <foreach name="tiList" item="v">
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="{:U('Article/show')}?id={$v.article_id}&name={$v.article_title}">{$v.article_title}</a></li>
+                        </foreach>
+                    </ul>
+                </div>
+                <div class="blog-module shadow">
+                    <div class="blog-module-title">分类</div>
+                    <ul class="fa-ul blog-module-ul">
+                        <foreach name="classify" item="n">
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="{:U('Article/index')}?id={$n.classify_id}" >{$n.classify_name}</a></li>
+                        </foreach>
+                    </ul>
+                </div>
+                <div class="blog-module shadow">
+                    <div class="blog-module-title">一路走来</div>
+                    <dl class="footprint">
+                        <dt>2017年03月12日</dt>
+                        <dd>新增留言回复功能！人人都可参与回复！</dd>
+                        <dt>2017年03月10日</dt>
+                        <dd>不落阁2.0基本功能完成，正式上线！</dd>
+                        <dt>2017年03月09日</dt>
+                        <dd>新增文章搜索功能！</dd>
+                        <dt>2017年02月25日</dt>
+                        <dd>QQ互联接入网站，可QQ登陆发表评论与留言！</dd>
+                    </dl>
+                </div>
+                <div class="blog-module shadow">
+                    <div class="blog-module-title">后台记录</div>
+                    <dl class="footprint">
+                        <foreach name="logList" item="v">
+                        <dt>{$v.log_time|date='Y-m-d H:i:s',###}</dt>
+                        <dd>{$v.log_coment}</dd>
+                        </foreach>
+                    </dl>
+                </div>
+                <div class="blog-module shadow">
+                    <div class="blog-module-title">友情链接</div>
+                    <ul class="blogroll">
+                        <foreach name="con" item="v">
+                        <li><a target="_blank" href="http://{$v.connect_url}" >{$v.connect_name}</a></li>
+                        </foreach>
+                        <!--<embed src="images/dangnilaole.mp3" autostart="true" loop="true"  width="0" height="0"> </embed>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+<include file="Public:bottom" />

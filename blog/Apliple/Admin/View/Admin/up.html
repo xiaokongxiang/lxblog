@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台模板</title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css2/amazeui.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css2/core.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css2/menu.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css2/index.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css2/admin.css" />
+    <script src="__PUBLIC__/Admin/jquery-1.js"></script>
+    <script src="__PUBLIC__/Admin/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/Admin/messages_zh.min.js"></script>
+</head>
+<body>
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="card-box">
+            <!-- Row start -->
+            <div class="am-g">
+            </div>
+            <!-- Row end -->
+            <!-- Row start -->
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <form class="am-form" action="{:U('Admin/update')}" method="post" id="form">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                            <tr>
+                                <td>管理员的名称</td>
+                                <td><input type="text" name="login_name"  value="{$loginDate.login_name}"/></td>
+                            </tr>
+                            <tr>
+                                <td>输旧的密码</td>
+                                <td><input type="password" name="login_psd" /></td>
+                            </tr>
+                            <tr>
+                                <td>输新的密码</td>
+                                <td><input type="password" name="login_pwd" /></td>
+                            </tr>
+                            <tr align="center">
+                                <td colspan="2"><input type="submit" value="提交"/></td>
+                            </tr>
+                            <input type="hidden" name="login_id" value="{$loginDate.login_id}"/>
+                            </thead>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#form').validate({
+        rules:{
+            login_name:{
+                required:true
+            },login_pwd:{
+                required:true
+            },login_psd:{
+                required:true
+            }
+        },
+        messages:{
+            login_name:{
+                required:'请输入名称'
+            },login_psd:{
+                required:'请输入密码'
+            },login_pwd:{
+                required:'请输入新密码'
+            }
+
+        }
+    })
+</script>

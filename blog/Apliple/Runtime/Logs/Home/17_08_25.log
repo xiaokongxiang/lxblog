@@ -1,0 +1,79 @@
+[ 2017-08-25T09:00:56+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005904s ]
+SQL: SHOW COLUMNS FROM `blogs_visit` [ RunTime:0.0101s ]
+SQL: INSERT INTO `blogs_visit` (`ip`,`time`,`url`,`agent`,`user`) VALUES ('127.0.0.1','1503622856','/','Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','') [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `blogs_deploy` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `blogs_deploy`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blogs_article` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blogs_article` WHERE ( is_del = 0 ) ORDER BY article_id desc LIMIT 8   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blogs_classify` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blogs_classify` WHERE ( 1=1 AND classify_id='3' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `blogs_login` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `blogs_login` WHERE ( 1=1 AND login_id='4' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `blogs_label` [ RunTime:0.0048s ]
+NOTIC: [8] Undefined index: mapping_order C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+NOTIC: [8] Undefined index: relation_foreign_key C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 188 行.
+SQL: SELECT b.* FROM blogs_label_article AS a, blogs_label AS b WHERE a.Label_id = b.label_id AND a. article_id='6' [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `blogs_comment` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blogs_comment` WHERE ( 1=1 AND comment_id='6' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `blogs_classify` WHERE ( 1=1 AND classify_id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `blogs_login` WHERE ( 1=1 AND login_id='4' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: mapping_order C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+NOTIC: [8] Undefined index: relation_foreign_key C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 188 行.
+SQL: SELECT b.* FROM blogs_label_article AS a, blogs_label AS b WHERE a.Label_id = b.label_id AND a. article_id='4' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `blogs_comment` WHERE ( 1=1 AND comment_id='4' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `blogs_classify` WHERE ( 1=1 AND classify_id='3' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `blogs_login` WHERE ( 1=1 AND login_id='4' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: mapping_order C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+NOTIC: [8] Undefined index: relation_foreign_key C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 188 行.
+SQL: SELECT b.* FROM blogs_label_article AS a, blogs_label AS b WHERE a.Label_id = b.label_id AND a. article_id='3' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `blogs_comment` WHERE ( 1=1 AND comment_id='3' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `blogs_classify` WHERE ( 1=1 AND classify_id='3' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `blogs_login` WHERE ( 1=1 AND login_id='4' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: mapping_order C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+NOTIC: [8] Undefined index: relation_foreign_key C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 188 行.
+SQL: SELECT b.* FROM blogs_label_article AS a, blogs_label AS b WHERE a.Label_id = b.label_id AND a. article_id='2' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `blogs_comment` WHERE ( 1=1 AND comment_id='2' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `blogs_classify` WHERE ( 1=1 AND classify_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `blogs_login` WHERE ( 1=1 AND login_id='4' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: mapping_order C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+NOTIC: [8] Undefined index: relation_foreign_key C:\xampp\htdocs\hb\blog\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 188 行.
+SQL: SELECT b.* FROM blogs_label_article AS a, blogs_label AS b WHERE a.Label_id = b.label_id AND a. article_id='1' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `blogs_comment` WHERE ( 1=1 AND comment_id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blogs_article` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `blogs_article` ORDER BY like_hits desc LIMIT 8   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `blogs_connect` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `blogs_connect` ORDER BY connect_sost desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `blogs_classify` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `blogs_classify`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `blogs_log` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `blogs_log` ORDER BY log_id desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001490s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001575s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032356s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003421s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004210s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004325s ]
+
+[ 2017-08-25T09:01:01+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+
